@@ -18,9 +18,9 @@ class IntrusionEvent : public Event {
   // this constructor builds intrusionEvents from given data provided in Events.
   //const & are used for strings to avoid copying them.
   //used claude for help on weather i should add const & to the code and it said yes to avoid this file from modifying the original data. 
-    IntrusionEvent(const string& id, const string& timestamp,
-                    const string& ip, const string& severity,
-                    const string& cve, const string& attackType,
+    IntrusionEvent(const string& eventID, const string& timestamp,
+                    const string& ipAddress, const string& severity,
+                    const string& cveID, const string& attackType,
                     int attemptCount);
                     
                     
