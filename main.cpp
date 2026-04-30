@@ -17,7 +17,7 @@ using namespace std;
 
 int main() {
 
-cout << "Cybersecurity Event Logger" << endl;
+cout << "Cybersecurity Event Log Analyzer" << endl;
 
 // ====================================================================
 //member 4 - Event Manager 
