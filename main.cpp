@@ -58,7 +58,7 @@ int option = 0;
 while (option != 7) { //forgot to add while loop so the menu can LOOP
 cout << "Main Menu:\n" << "1. Add Event\n" 
     << "2. View All Events\n" << "3. Search by IP Address\n"
-    << "4. Search by Severity\n" << 5. "Delete Event\n" 
+    << "4. Search by Severity\n" << "5. Delete Event\n" 
     << "6. Generate Report\n" << "7. Save and Exit\n"
     << "Enter your option (1-7): ";
     
