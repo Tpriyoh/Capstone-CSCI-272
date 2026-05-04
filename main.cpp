@@ -54,6 +54,8 @@ cout << "CSV row: " << ePtr->toCSV() << endl;
 
 
 //=======================Main Menu==========================
+int option = 0;
+while (option != 7) { //forgot to add while loop so the menu can LOOP
 cout << "Main Menu:\n" << "1. Add Event\n" 
     << "2. View All Events\n" << "3. Search by IP Address\n"
     << "4. Search by Severity\n" << 5. "Delete Event\n" 
@@ -90,7 +92,7 @@ cout << "Main Menu:\n" << "1. Add Event\n"
             // it must loop through vector<Event*> and calls display()
             // on each one and polymorphism will use the right one.
             //display funct for intrusionEvent and malwareEvent.
-            cout << "\n Option 2: View All Events\n"
+            cout << "\n Option 2: View All Events\n";
             break;
         }
         
@@ -101,7 +103,7 @@ cout << "Main Menu:\n" << "1. Add Event\n"
             //Ask user to enter IP address to search.
             // this calls eventMAnager.searchByIP(ip)
             // it must find and display all events with a matching IP address.
-           cout << "\n Option 3: Search by IP\n"
+           cout << "\n Option 3: Search by IP\n";
            break; 
         }
         
@@ -112,7 +114,7 @@ cout << "Main Menu:\n" << "1. Add Event\n"
             //Ask user to Enter Severity (LOW,MEDIUM,HIGH,CRITICAL)
             // calls eventManager.searchBySeverity(severity)
             // it must find and display all events that share that severity level.
-            cout <<"\n Option 4: Search by Severity\n"
+            cout <<"\n Option 4: Search by Severity\n";
             break;
         }
         
@@ -132,7 +134,7 @@ cout << "Main Menu:\n" << "1. Add Event\n"
             //prints a summary through eventManager.generateReport()
             //it should show total events, counts by type, weather it was 
             //intrusion or malware. counts by severity, and list unique IPs.
-            cout << "\nOption 6: Generate Report\n"
+            cout << "\nOption 6: Generate Report\n";
             break;
         }
         
@@ -143,11 +145,14 @@ cout << "Main Menu:\n" << "1. Add Event\n"
             //Calls Filehandler method to write all events from eventManager
             //back to the CSV File ex : FileHandler::saveEventsToFile("events.csv", eventManager)
             //it must iterate over all events and write their toCSV output.
-            cout << "\nOption 7: Savinng and exiting\n"
+            cout << "\nOption 7: Savinng and exiting\n";
             break;
         }
+        
+        default: cout <<"\nInvalid Option. Please enter a number between 1 and 7. \n";
+        break;
     }
-
+}
 // ====================================================================
 // Member 5 File Handler.
 // Save the manager's events into events.csv before the user exits.
