@@ -59,14 +59,6 @@ class EventManager {
             }
         }
     }
-    
-
-    // ------ HELPER FOR THE REPORT ------
-    void displayAllEvents() const {
-        for (const Event* e : events) {
-            e->display();
-        }
-    }
 
     // ---- REMOVES EVENTS -------
     // deletes events from the input by index or ID
@@ -75,6 +67,13 @@ class EventManager {
         if (index >= 0 && index < events.size()) {
             delete events[index]; // Frees the memory if dynamically allocated
             events.erase(events.begin() + index); // removes from vector
+        }
+    }
+
+    // ------ HELPER FOR THE REPORT ------
+    void displayAllEvents() const {
+        for (const Event* e : events) {
+            e->display();
         }
     }
 
