@@ -146,7 +146,7 @@ cout << "Main Menu:\n" << "1. Add Event\n"
             //Calls Filehandler method to write all events from eventManager
             //back to the CSV File ex : FileHandler::saveEventsToFile("events.csv", eventManager)
             //it must iterate over all events and write their toCSV output.
-            cout << "\nOption 7: Savinng and exiting\n";
+            cout << "\nOption 7: Saving and exiting\n";
             break;
         }
         
