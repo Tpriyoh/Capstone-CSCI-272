@@ -21,19 +21,19 @@ class EventManager {
     }
     
     // ---- SEARCH FUNCTION --------
-    // Ask Google to help understand the member functions step by step
+    // Ask Google to help understand the member functions step by step and structure
     // Use void to display events and delete object pointers
     // Search by IP Address
     void searchByIp(string targetIP) {
         for (Event* e : events) {
-            if (e -> getIP() == tragetIP) {
+            if (e -> getIP() == targetIP) {
                 e -> display();
             }
         }
     }
     
     // ----- SEARCH BY SERVERITY LEVELS & CVEID ------
-    void searchBySeverity(int level) {
+    void searchBySeverity(string level) {
         for (Event* e : events) {
             if (e -> getSeverity() == level) {
                 e -> display(); // Shows the matching events
