@@ -21,6 +21,7 @@ class EventManager {
     ~EventManager();
 
     // ---- The core functions like add and remove event ---
+    // These are specifically for EventManager.cpp
     void addEvent(Event* newEvent);
     void deleteEvent(int index);
     
