@@ -7,6 +7,7 @@
 #define EVENTMANAGER_H
 #include "Event.h"
 #include <vector>
+#include <string>
 using namespace std;
 
 
