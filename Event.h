@@ -82,7 +82,7 @@ template <typename T>
 T& operator<<(T& os, const Event& e) {
     os << "[" << e.getEventID()
        << " | " << e.getSeverity()
-       << " | " << e.getIPAddress()
+       << " | " << e.getIpAddress()
        << " | " << e.getCveID() << "]"; 
     return os; 
 }
