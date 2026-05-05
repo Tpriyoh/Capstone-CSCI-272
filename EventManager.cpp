@@ -4,7 +4,6 @@
 // Course: CSCI 272 - Object Oriented Programming
 
 #include "EventManager.h"
-#
 #include <string>
 #include <iostream>
 
