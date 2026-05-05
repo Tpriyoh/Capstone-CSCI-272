@@ -155,3 +155,20 @@ Event* FileHandler::binarySearchByEventID(vector<Event*>& events, string targetI
 
     return nullptr;
 }
+
+// I used the project CSV Field Reference to understand how the csv rows are structured.
+// The project reference shows that fields 1-6 are shared by both event types,
+// and fields 7-8 change depending on whether the row is INTRUSION or MALWARE.
+//
+// I used cppreference for general C++ concepts like ifstream, stringstream, vector, and stoi.
+// ifstream helped with reading data from a file.
+// stringstream helped with splitting each csv row by commas.
+// vector helped with storing multiple Event pointers.
+// stoi helped with converting attemptCount from a string into an integer.
+//
+// I used Khan Academy to help explain the binary search logic.
+// Binary search works on a sorted list and keeps cutting the search area in half.
+// I also used ChatGPT as an AI writing and coding assistant.
+// Chat helped me organize  a
+// and explain the logic for parsing, bubble sort, and binary search in a way
+// that matches my understanding of the project
