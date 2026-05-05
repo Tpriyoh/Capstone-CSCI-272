@@ -4,6 +4,8 @@
 // Course: CSCI 272 - Object Oriented Programming
 
 #include "EventManager.h"
+#
+#include <string>
 #include <iostream>
 
 // Destructor to clean up and prevent memory leaks
@@ -25,7 +27,7 @@
     // Ask Google to help understand the member functions step by step and structure
     // Use void to display events and delete object pointers
     // Search by IP Address
-    void EventManager::searchByIp(const string targetIpAddress) const {
+    void EventManager::searchByIp(const string& targetIpAddress) const {
         bool found = false;
         for (Event* e : events) {
             if (e->getIpAddress() == targetIpAddress) {
@@ -78,4 +80,3 @@
         displayAllEvents();
         cout << "--------------------" << endl;
     }
-}
