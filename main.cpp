@@ -8,9 +8,9 @@
 
 #include "Event.h" // Member 1 (Tun Tun (Jonathan) Aung)
 #include "IntrusionEvent.h" // Member 2 (Tanzin Priyoh)
-//#include "MalwareEvent.h" // Member 3 (Bilal Ahmed)
-//#include "EventManager.h" // Member 4 (Miguel Llapa)
-//#include "FileHandler.h" //Member 5 (Ibrahim Janangir)
+#include "MalwareEvent.h" // Member 3 (Bilal Ahmed)
+#include "EventManager.h" // Member 4 (Miguel Llapa)
+#include "FileHandler.h" //Member 5 (Ibrahim Janangir)
 #include <iostream>
 #include <vector>
 #include <stdexcept> //for invalid arguement exception
