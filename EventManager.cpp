@@ -3,6 +3,9 @@
 // Date: 4/29/2026
 // Course: CSCI 272 - Object Oriented Programming
 
+// Moved the code from EventManager.h to EventManager.cpp
+// Asked Google AI to help me understand step by step for EventManager.cpp
+// and what's needed for cpp so I can understand what I'm doing for clarity on the structure
 #include "EventManager.h"
 #include <string>
 #include <iostream>
@@ -16,8 +19,9 @@
     }
     
     // ---- ADD EVENT FUNCTION -------
+    // Adds event in this function
     void EventManager::addEvent(Event* newEvent) {
-        if (newEvent != nullptr) {
+        if (newEvent != nullptr) { //added a nullptr for event so it can provide the pointer safely
             events.push_back(newEvent);
         }
     }
@@ -27,11 +31,11 @@
     // Use void to display events and delete object pointers
     // Search by IP Address
     void EventManager::searchByIp(const string& targetIpAddress) const {
-        bool found = false;
+        bool found = false; // enables when searching Ip Address is false
         for (Event* e : events) {
             if (e->getIpAddress() == targetIpAddress) {
                 e->display();
-                found = true;
+                found = true; // enables when searching Ip Address is true and displays it
             }
         }
         if (!found) cout << "No events found for the address: " << targetIpAddress << endl;
