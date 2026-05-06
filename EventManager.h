@@ -12,10 +12,8 @@ using namespace std;
 
 
 class EventManager {
-    private: 
-    vector<Event*> events; // The collection of event pointer inputs
-    // Stores pointers to ensure that a destructor was there for EventManager
-    // to delete pointers and memory leaks
+    protected: 
+    vector<Event*> events;
 
     public:
     // Destructor to prevent memory leaks
