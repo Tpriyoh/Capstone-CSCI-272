@@ -129,8 +129,7 @@ cout << "Main Menu:\n"
     << "3. Search by IP Address\n"
     << "4. Search by Severity\n" 
     << "5. Generate Report\n" 
-    << "6. Save and Exit\n"
-    << "Enter your option (1-6): ";
+    << "6. Save and Exit\n";
     
     
     
