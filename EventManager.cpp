@@ -34,7 +34,8 @@
         bool found = false; // enables when searching Ip Address is false
         for (Event* e : events) {
             if (e->getIpAddress() == targetIpAddress) {
-                e->display();
+                //e->display();
+                cout << *e << endl;  //Using template operator <<
                 found = true; // enables when searching Ip Address is true and displays it
             }
         }
@@ -43,19 +44,27 @@
     
     // ----- SEARCH BY SERVERITY LEVELS & CVEID ------
     void EventManager::searchBySeverity(const string& level) const {
+        bool found = false;
         for (Event* e : events) {
             if (e->getSeverity() == level) {
-                e->display(); // Shows the matching events
+                //e->display(); // Shows the matching events
+                cout << *e << endl;   //Using template operator <<
+                found = true;
             }
         }
+        if (!found) cout << "No events found at severity: " << level << endl; 
     }
     
     void EventManager::searchByCveID(const string& targetCveID) const {
+        bool found = false;
         for (Event* e : events) {
             if (e->getCveID() == targetCveID) {
-                e->display();
+                //e->display();
+                cout << *e << endl; //Using template operator <<
+                found = true;
             }
         }
+        if (!found) cout << "No events found for CVE: " << targetCveID << endl;
     }
 
     // ---- REMOVES EVENTS -------
