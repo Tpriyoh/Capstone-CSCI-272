@@ -28,14 +28,14 @@ int getValidInt(const string& prompt){
         cin >> value;
         if (cin.fail()) {
             cin.clear();
-            cin.ignore(numeric_limit<streamsize>::max(), '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Invalid input. Please enter a number. \n");
-            coninue; 
+            continue; 
     }
-        cin.ignore(numerc_limits<streamsize>::max(), '\n');
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         return value;
 }
-
+}
 //Helper function: promptSeverity & promptLine
 //why: loop through until user types in either LOW, MEDIUM, HIGH, or Critical (any casing)
 //This will use Event::validateSeverity()
