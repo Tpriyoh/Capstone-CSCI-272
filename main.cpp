@@ -119,11 +119,11 @@ cout << "Loaded " << loaded.size() << " event(s).\n\n";
 // Create a MalwareEvent and call display() / toCSV on it. same as member 2
 //in demo above.
 // ====================================================================
-    MalwareEvent demo("E00-DEMO2","2026-04-13T08:30:00","10.0.0.45","CRITICAL", "CVE-2023-23397", "Ransomware", "outlook.pst");
+    // MalwareEvent demo("E00-DEMO2","2026-04-13T08:30:00","10.0.0.45","CRITICAL", "CVE-2023-23397", "Ransomware", "outlook.pst");
 
-    Event* ePtr = &demo;
-    ePtr->display();
-    cout << "CSV row: " << ePtr->toCSV() << endl;
+    // Event* ePtr = &demo;
+    // ePtr->display();
+    // cout << "CSV row: " << ePtr->toCSV() << endl;
 
 
 //=======================Main Menu==========================
