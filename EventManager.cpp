@@ -70,11 +70,22 @@
     // ---- REMOVES EVENTS -------
     // deletes events from the input by index or ID
     // index used to access events elements of the total event
-    void EventManager::deleteEvent(int index){
-        if (index >= 0 && index < (int)events.size()) {
-            delete events[index]; // Frees the memory if dynamically allocated
-            events.erase(events.begin() + index); // removes from vector
+    // void EventManager::deleteEvent(int index){
+    //     if (index >= 0 && index < (int)events.size()) {
+    //         delete events[index]; // Frees the memory if dynamically allocated
+    //         events.erase(events.begin() + index); // removes from vector
+    //     }
+    // }
+    void EventManager::deleteEventById(const string& eventID) { //Delete Event by ID and provide confirmation (Option 5) 
+        for (int i = 0; i < (int)events.size(); i++) {
+            if (events[i]->getEventID() == eventID) {
+                delete events[i];
+                events.erase(events.begin() + i); //start count all the way from left(begin) to the I-th location 
+                cout << "Deleted event " << eventID << endl;
+                return;
+            }
         }
+        cout << "No event found with ID: " << eventID << endl;
     }
 
     // ------ HELPER FOR THE REPORT ------
@@ -86,9 +97,66 @@
 
     // ---- GENERATE REPORTS --------
     // Generates and displays reports for every pointer
+    //Edit(Jonathan): I didn't like how unstructured and the wall that the original generate report was giving so for clarity sake and also differentiate from dispaly all events.
+    // a set automatically de-duplicates, so we get unique IPs instead of the long winded loop like commented below. 
+    //This was a recommendation given by Claude after asking for recommendation for edits and layout for generate rport. 
     void EventManager::generateReport() const {
-        cout << "--- System Event Report ---" << endl;
-        cout << "Events: " << events.size() << endl;
-        displayAllEvents();
-        cout << "--------------------" << endl;
+
+         // vector<string> seenIPs;
+        // for (Event* e : events) {
+        //     bool alreadyHave = false;
+        //     for (string& ip : seenIPs) {           //loop to check duplicates
+        //         if (ip == e->getIpAddress()) {
+        //             alreadyHave = true;
+        //             break;
+        //         }
+        //     }
+        //     if (!alreadyHave) {
+        //         seenIPs.push_back(e->getIpAddress());
+        //     }
+        // }
+        // cout << seenIPs.size();
+        int intrusions = 0, malware = 0, low = 0, med = 0, high = 0, crit = 0; // counters for each report category (start at zero)
+        set<string> uniqueIPs;
+
+        for (Event* e : events) {
+            //(polymorphism + dynamic_cast)
+            //dyanimc cast purpose here, a runtyime type check and only works with classses that use virtual and we do use it (Event class) 
+            //What it does is essentailly asking the parameter "Is this pointer pointing to intrusion" if it is, return a ptr, if not, a nullptr. 
+            if (dynamic_cast<IntrusionEvent*>(e) != nullptr)      intrusions++; //not a nullptr so increment intrusion
+            else if (dynamic_cast<MalwareEvent*>(e)   != nullptr) malware++;  //not a nullptr so increment malware
+
+            // severity tally (string comparison)
+            const string& sev = e->getSeverity();
+            if      (sev == "LOW")      low++;
+            else if (sev == "MEDIUM")   med++;
+            else if (sev == "HIGH")     high++;
+            else if (sev == "CRITICAL") crit++;
+
+            // unique IP collection
+            uniqueIPs.insert(e->getIpAddress());
+        }
+
+        cout << "\n========== Security Event Report ==========" << endl;
+        cout << "Total events       : " << events.size() << endl;
+        cout << "  Intrusions       : " << intrusions    << endl;
+        cout << "  Malware          : " << malware       << endl;
+        cout << "Severity breakdown :"  << endl;
+        cout << "  CRITICAL         : " << crit          << endl;
+        cout << "  HIGH             : " << high          << endl;
+        cout << "  MEDIUM           : " << med           << endl;
+        cout << "  LOW              : " << low           << endl;
+        cout << "Unique attacker IPs: " << uniqueIPs.size() << endl;
+        for (const string& ip : uniqueIPs) {
+            cout << "  - " << ip << endl;
+        }
+
+   
+        ostringstream oss;
+        oss << "Compact listing:\n";
+        for (Event* e : events) {
+            oss << "  " << *e << "\n";   // template operator<< (T = ostringstream)
+        }
+        cout << oss.str();
+        cout << "===========================================\n" << endl;
     }
