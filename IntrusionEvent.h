@@ -40,8 +40,8 @@ class IntrusionEvent : public Event {
     
     //getter functions creates a copy of the private data.
     //and are given const to avoid making changes.
-    string getAttackType() const;
-    int getAttemptCount() const;
+    // string getAttackType() const;
+    // int getAttemptCount() const;
 };
 
 #endif
