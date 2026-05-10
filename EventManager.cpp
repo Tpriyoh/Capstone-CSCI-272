@@ -76,17 +76,17 @@
     //         events.erase(events.begin() + index); // removes from vector
     //     }
     // }
-    void EventManager::deleteEventById(const string& eventID) { //Delete Event by ID and provide confirmation (Option 5) 
-        for (int i = 0; i < (int)events.size(); i++) {
-            if (events[i]->getEventID() == eventID) {
-                delete events[i];
-                events.erase(events.begin() + i); //start count all the way from left(begin) to the I-th location 
-                cout << "Deleted event " << eventID << endl;
-                return;
-            }
-        }
-        cout << "No event found with ID: " << eventID << endl;
-    }
+    // void EventManager::deleteEventById(const string& eventID) { //Delete Event by ID and provide confirmation (Option 5) 
+    //     for (int i = 0; i < (int)events.size(); i++) {
+    //         if (events[i]->getEventID() == eventID) {
+    //             delete events[i];
+    //             events.erase(events.begin() + i); //start count all the way from left(begin) to the I-th location 
+    //             cout << "Deleted event " << eventID << endl;
+    //             return;
+    //         }
+    //     }
+    //     cout << "No event found with ID: " << eventID << endl;
+    // }
 
     // ------ HELPER FOR THE REPORT ------
     void EventManager::displayAllEvents() const {
