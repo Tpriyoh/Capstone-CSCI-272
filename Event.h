@@ -54,9 +54,9 @@ public:
     static bool validateSeverity(const string& s);
 
     // ---- SETTER -------------------------------------------------------------
-    void setEventID(const string& id) { eventID = id; }
-    void setSeverity(const string& s) { severity = s; }
-    void setCveID(const string& id) { cveID = id; }
+    // void setEventID(const string& id) { eventID = id; }
+    // void setSeverity(const string& s) { severity = s; }
+    // void setCveID(const string& id) { cveID = id; }
     //The following setters are available but unncessary since real event would not and should not
     //alter timestamp or ipaddresses.
 
