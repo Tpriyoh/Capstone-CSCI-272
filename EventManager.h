@@ -28,7 +28,8 @@ class EventManager {
     void searchByIp(const string& targetIpAddress) const;
     void searchBySeverity(const string& level) const;
     void searchByCveID(const string& targetCveID) const;
-    
+    const vector<Event*>& getEvents() {  return events; //this getEvents() function gives main.cpp access to private lists in events 
+                                                       //so file handler can save them. without it the save option cant see events at all.
     // --- Reports ---
     void displayAllEvents() const;
     void generateReport() const;
