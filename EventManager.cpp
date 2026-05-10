@@ -55,17 +55,17 @@
         if (!found) cout << "No events found at severity: " << level << endl; 
     }
     
-    void EventManager::searchByCveID(const string& targetCveID) const {
-        bool found = false;
-        for (Event* e : events) {
-            if (e->getCveID() == targetCveID) {
-                //e->display();
-                cout << *e << endl; //Using template operator <<
-                found = true;
-            }
-        }
-        if (!found) cout << "No events found for CVE: " << targetCveID << endl;
-    }
+    // void EventManager::searchByCveID(const string& targetCveID) const {
+    //     bool found = false;
+    //     for (Event* e : events) {
+    //         if (e->getCveID() == targetCveID) {
+    //             //e->display();
+    //             cout << *e << endl; //Using template operator <<
+    //             found = true;
+    //         }
+    //     }
+    //     if (!found) cout << "No events found for CVE: " << targetCveID << endl;
+    // }
 
     // ---- REMOVES EVENTS -------
     // deletes events from the input by index or ID
