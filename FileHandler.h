@@ -33,11 +33,11 @@ public:
     //saves the current events back into a csv file.
     static void saveEventsToFile(string filename, const vector<Event*>& events);
 
-    //sorts the events by event ID before binary search.
-    static void bubbleSortByEventID(vector<Event*>& events);
+    // //sorts the events by event ID before binary search.
+    // static void bubbleSortByEventID(vector<Event*>& events);
 
-    //searches for an event ID using binary search.
-    static Event* binarySearchByEventID(vector<Event*>& events, string targetID);
+    // //searches for an event ID using binary search.
+    // static Event* binarySearchByEventID(vector<Event*>& events, string targetID);
 
 private:
 
