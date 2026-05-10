@@ -255,9 +255,9 @@ cout << "Main Menu:\n"
             // it must find and display all events with a matching IP address.
            cout << "\n Option 3: Search by IP\n";
            
-           //string ip = promptLine("Enter IP Address to Search: ");
+           string ip = promptLine("Enter IP Address to Search: ");
            
-          // manager.searchByIp();   (Needs to be added.)
+           manager.searchByIp(ip);   
            
            break; 
         }
@@ -316,7 +316,7 @@ cout << "Main Menu:\n"
             //it must iterate over all events and write their toCSV output.
             cout << "\nOption 6: Saving and exiting\n";
             
-           // FileHandler::saveEventsToFile("events.csv", manager.getEvents()); (Needs to be added.)
+            FileHandler::saveEventsToFile("events.csv", manager.getEvents()); 
             
             break;
         }
