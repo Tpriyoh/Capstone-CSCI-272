@@ -65,12 +65,12 @@ oss << "INTRUSION," << getEventID() << ","
 //set to const since its read only and other parts of the program will use it to ask
 //about what attack type it was? or how many attempts occured?
 
-// string IntrusionEvent::getAttackType() const {
-//     return attackType;
-// }
+string IntrusionEvent::getAttackType() const {
+    return attackType;
+}
 
-// int IntrusionEvent::getAttemptCount() const {
-//     return attemptCount;
-// }
+int IntrusionEvent::getAttemptCount() const {
+    return attemptCount;
+}
 
 //will add sources and comments after feedback.
