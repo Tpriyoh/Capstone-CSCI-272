@@ -91,7 +91,11 @@ EventManager manager;
 // ====================================================================
 // Member 5 - File Handler 
 // Load existing events from events.csv into the manager at startup.
-// ====================================================================
+cout << "Loading events from events.csv...\n";
+vector<Event*> loaded = FileHandler::loadEventsFromFile("events.csv");
+for (Event* e : loaded)
+    manager.addEvent(e);
+cout << "Loaded " << loaded.size() << " event(s).\n\n";
 
 
 
