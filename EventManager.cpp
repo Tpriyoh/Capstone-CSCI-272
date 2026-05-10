@@ -9,6 +9,12 @@
 #include "EventManager.h"
 #include <string>
 #include <iostream>
+//need derived header files here so dynamic_cast can recognnize them in generateReport().
+#include "IntrusionEvent.h" 
+#include "MalwareEvent.h"
+#include <set> //for set<string> uniqueIPs in generateReport()
+#include <sstream> //because we used ostringsream in generateReport().
+
 
 // Destructor to clean up and prevent memory leaks
     EventManager::~EventManager() {
