@@ -158,47 +158,47 @@ vector<string> FileHandler::splitCSVLine(string line) {
     return fields;
 }
 
-//this sorts the events by event ID.
-//binary search needs the list to be sorted first.
-void FileHandler::bubbleSortByEventID(vector<Event*>& events) {
-    int n = events.size();
+// //this sorts the events by event ID.
+// //binary search needs the list to be sorted first.
+// void FileHandler::bubbleSortByEventID(vector<Event*>& events) {
+//     int n = events.size();
 
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
+//     for (int i = 0; i < n - 1; i++) {
+//         for (int j = 0; j < n - i - 1; j++) {
 
-            if (events[j]->getEventID() > events[j + 1]->getEventID()) {
-                Event* temp = events[j];
-                events[j] = events[j + 1];
-                events[j + 1] = temp;
-            }
-        }
-    }
-}
+//             if (events[j]->getEventID() > events[j + 1]->getEventID()) {
+//                 Event* temp = events[j];
+//                 events[j] = events[j + 1];
+//                 events[j + 1] = temp;
+//             }
+//         }
+//     }
+// }
 
-//this searches by cutting the sorted list in half each time.
-//if the middle ID is not the one we need, the code moves left or right.
-Event* FileHandler::binarySearchByEventID(vector<Event*>& events, string targetID) {
-    bubbleSortByEventID(events);
+// //this searches by cutting the sorted list in half each time.
+// //if the middle ID is not the one we need, the code moves left or right.
+// Event* FileHandler::binarySearchByEventID(vector<Event*>& events, string targetID) {
+//     bubbleSortByEventID(events);
 
-    int left = 0;
-    int right = events.size() - 1;
+//     int left = 0;
+//     int right = events.size() - 1;
 
-    while (left <= right) {
-        int middle = left + (right - left) / 2;
-        string middleID = events[middle]->getEventID();
+//     while (left <= right) {
+//         int middle = left + (right - left) / 2;
+//         string middleID = events[middle]->getEventID();
 
-        if (middleID == targetID) {
-            return events[middle];
-        }
+//         if (middleID == targetID) {
+//             return events[middle];
+//         }
 
-        else if (middleID < targetID) {
-            left = middle + 1;
-        }
+//         else if (middleID < targetID) {
+//             left = middle + 1;
+//         }
 
-        else {
-            right = middle - 1;
-        }
-    }
+//         else {
+//             right = middle - 1;
+//         }
+//     }
 
-    return nullptr;
-}
+//     return nullptr;
+// }
