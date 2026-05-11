@@ -67,4 +67,5 @@ Severity must be one of: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.
 
 ## AI usage note
 
-We used Claude (Anthropic) during planning and to clarify concepts (virtual functions, polymorphism, the difference between member and free-function operator overloads, the trade-offs between member and free-function templates). After completion, AI was then use to check for test cases, explain other teammember's code for understanding. Readme.md layout was designed through AI for pretty graphic and structure syntaxes. Every concept Claude explained was cross-checked against course Lessons 4, 8, and 10 before we used it.
+We used Claude (Anthropic) during planning and to clarify concepts (virtual functions, polymorphism, the difference between member and free-function operator overloads, the trade-offs between member and free-function templates). After completion, AI was then use to check for test cases, explain other teammember's code for understanding. Readme.md layout was designed through AI for pretty graphic and structure syntaxes. Every concept Claude explained was cross-checked against course Lessons 4, 8, and 10 before we used it. Concept that weren't covered in class such as usage of e.what() are commented with resources and clarity in AI usage.
+
