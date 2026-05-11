@@ -40,7 +40,7 @@ Severity must be one of: `LOW`, `MEDIUM`, `HIGH`, `CRITICAL`.
 ---
 
 ### Exception handling
-- At any "Enter your option (1-7):" prompt, type `abc` instead of a number. Expected: `Error: Must enter a number between 1-7.` and the menu re-displays without crashing.
+- At any "Enter your option (1-6):" prompt, type `abc` instead of a number. Expected: `Error: Must enter a number between 1-6.` and the menu re-displays without crashing.
 - Rename `events.csv` to `events.csv.bak` and run the program. Expected: `FileHandler Error: File could not be opened: events.csv` followed by `Starting with an empty event list instead.` Program continues normally.
 
 ---
